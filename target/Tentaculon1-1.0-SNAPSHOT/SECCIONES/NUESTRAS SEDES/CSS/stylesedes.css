@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 60px; 
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../imgsedes/fondo6.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    max-width: 100vw;
+    color: white;
+}
+
+/* BARRA SUPERIOR */
+.franja-superior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #00163a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+    z-index: 1001;
+    gap: 15px;
+}
+
+.franja-textos {
+    font-size: 18px;
+    white-space: nowrap;
+    text-align: right;
+    max-width: 70vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.franja-textos a {
+  color: inherit;           /* Usa el color del contenedor padre */
+  text-decoration: none;    /* Quita el subrayado */
+}
+
+.franja-textos a:visited {
+  color: inherit;           /* Evita el morado al hacer clic */
+}
+
+.franja-textos a:hover,
+.franja-textos a:focus {
+  color: inherit;           /* O ajusta el color si quieres que cambie al pasar el mouse */
+  text-decoration: none;
+}
+
+.menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* SIDEBAR */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    left: auto;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+}
+
+.sidebar.activo {
+  left: 0;
+}
+
+.sidebar-item {
+    margin: 15px 20px;
+    padding: 12px;
+    border: 2px solid red;
+    color: white;
+    background-color: black;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar-item:hover {
+    background-color: #111;
+}
+.sidebar-item a {
+  color: inherit;           /* Usa el color del contenedor padre */
+  text-decoration: none;    /* Quita el subrayado */
+}
+
+.sidebar-item a:visited {
+  color: inherit;           /* Evita el morado al hacer clic */
+}
+
+.sidebar-item a:hover,
+.sidebar-item a:focus {
+  color: inherit;           /* O ajusta el color si quieres que cambie al pasar el mouse */
+  text-decoration: none;
+}
+
+.titulo {
+    font-size: 48px;
+    text-align: center;
+    font-family: 'Delius Swash Caps', cursive;
+    margin-bottom: 30px;
+}
+
+.titulo {
+    font-size: 3em;
+    margin-top: 30px;
+    text-shadow: 2px 2px 6px #000;
+    border-top: 8px solid white;
+    border-bottom: 8px solid white;
+    padding: 10px 0;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.sede {
+    background-color: rgba(0, 0, 0, 0.65);
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 0 15px #000;
+}
+
+.sede img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+}
+
+.recuadro {
+    color: white;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.recuadro .texto {
+    flex: 1 1 70%;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.5;
+    text-align: left;
+}
+.recuadro .sede-num {
+    font-size: 2em;
+    font-weight: bold;
+    flex: 1 1 15%;
+    text-align: center;
+}
+
+.recuadro .boton {
+    flex: 1 1 10%;
+    background-color: #003366;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .franja-textos {
+        font-size: 14px;
+        max-width: 60vw;
+    }
+
+    .menu-icon {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .franja-textos {
+        font-size: 12px;
+        max-width: 50vw;
+    }
+}

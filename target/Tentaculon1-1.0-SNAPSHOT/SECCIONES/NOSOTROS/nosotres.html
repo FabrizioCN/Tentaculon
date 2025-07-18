@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NOSOTROS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/estilonosotros.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../imagenes/logotenta.png">
+
+    
+</head>
+<body>
+
+    <!-- Barra superior -->
+    <div class="franja-superior">
+        <div class="franja-textos"><a href="../../index.html">Inicio</a> / 
+            <a href="../NOSOTROS/nosotres.html">Nosotros</a> / 
+            <a href="../CARTA/carta1.html">Carta</a> / 
+            <a href="../NUESTRAS SEDES/sedes.html">Sedes</a>
+        </div>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </div>
+
+    <!-- Barra lateral -->
+    <nav class="navbar">
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-item"><a href="../../index.html">INICIO</a></div>
+            <div class="sidebar-item"><a href="nosotres.html">NOSOTROS</a></div>
+            <div class="sidebar-item"><a href="../CARTA/carta1.html">CARTA</a></div>
+            <div class="sidebar-item"><a href="../../Seguridad/register.html">DELIVERY</a></div>
+            <div class="sidebar-item"><a href="../HORARIO ATENCION/horarios.html">HORARIO DE ATENCIÓN</a></div>
+            <div class="sidebar-item"><a href="../NUESTRAS SEDES/sedes.html">NUESTRAS SEDES</a></div>
+        </div>
+    </nav>
+
+  <section class="hero">
+    <h2 class="titulo-tentaculon">“EL TENTTACULÓN”</h2>
+    <p>Un restaurante de comida marina y peruana que honra el sabor, la tradición y la calidez de compartir en familia.</p>
+  </section>
+    <div class="linea-blanca"></div>
+
+  <main>
+      <h2 class="titulo-origen" style="font-size: 65px; font-family: 'Georgia', serif;">Nuestro Origen</h2>
+      <div class="origen-contenido">
+  <div class="historia">
+    <h3>HISTORIA</h3>
+    <p>Fundado en el año 2020 por dos cocineros apasionados y liderado por su creador, conocido cariñosamente como Kenyper.</p>
+    <p>El restaurante fue concebido con un sueño claro: convertirse en un referente de la gastronomía marina en su región, combinando sabor, originalidad, tradición y atención cercana.</p>
+    <p>A lo largo de los años, hemos crecido gracias a la confianza de nuestros clientes, la dedicación del equipo y el compromiso permanente de brindar una experiencia única. Hoy seguimos innovando, sin olvidar nuestras raíces.</p>
+  </div>
+
+  <div class="video-origen">
+    <video width="540" controls>
+     <source src="imagenes/video/video_nosotros.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+
+    <div class="imagen-despues-origen">
+  <div class="linea-blanca"></div>
+  <img src="imagenes/IMG3.jpg" alt="Imagen institucional">
+  <div class="linea-blanca"></div>
+</div>
+      
+      
+<!-- DE AQUI PA ABAJO FALTAAA -->
+
+
+<section class="equipo-espacios">
+  <div class="seccion-dual">
+    
+    <!-- Columna 1: Nuestro Equipo -->
+    <div class="bloque-equipo">
+      <div class="subtitulo-seccion">
+        <h2>Nuestro Equipo</h2>
+      </div>
+        
+        <div class="contenido-equipo">
+      <div class="equipo">
+        <h3>SOMOS</h3>
+        <p>
+          Más que un grupo de trabajo, somos una familia unida por un mismo propósito:
+          hacerte disfrutar cada visita con el mejor sabor y atención. En nuestro restaurante,
+          cada persona es una pieza clave que, con pasión, esfuerzo y mucha alegría,
+          contribuye día a día para brindarte la mejor experiencia.
+        </p>
+      </div>
+      <div class="imagen-equipo-lado">
+        <img src="imagenes/IMG_EQUIPO/EQUIPO.jpg" alt="Foto del equipo">
+      </div>
+    </div>
+</div>
+    
+    <!-- Columna 2: Nuestros Espacios -->
+    <div class="bloque-espacios">
+  <div class="subtitulo-seccion">
+    <h2>Nuestros Espacios</h2>
+  </div>
+  
+  <div class="contenedor-espacios">
+    <div class="galeria">
+      <img src="imagenes/IMG_NOSOTROS/ESPACIO1.jpg" alt="Espacio 1">
+      <img src="imagenes/IMG_NOSOTROS/ESPACIO2.jpg" alt="Espacio 2">
+      <img src="imagenes/IMG_NOSOTROS/ESPACIO3.jpg" alt="Espacio 3">
+      <img src="imagenes/IMG_NOSOTROS/ESPACIO5.jpg" alt="Espacio 5">
+      <img src="imagenes/IMG_NOSOTROS/ESPACIO6.jpg" alt="Espacio 6">
+      <img src="imagenes/IMG_NOSOTROS/ESPACIO7.jpg" alt="Espacio 7">
+    </div>
+
+    <div class="imagen-lateral">
+      <img src="imagenes/IMG_NOSOTROS/ESPACIO4.jpg" alt="Imagen destacada">
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+
+
+    <section class="frase-final">
+      <p>En “EL TENTACULÓN”, cada cliente es parte de nuestra historia. Te esperamos con los brazos abiertos y el sabor del mar en cada plato.</p>
+    </section>
+  </main>
+
+   <!-- Funcionalidad del menú -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuIcon = document.getElementById("menu-icon");
+            const sidebar = document.getElementById("sidebar");
+            let sidebarOpen = false;
+
+            menuIcon.addEventListener("click", () => {
+                sidebar.style.width = sidebarOpen ? "0" : "270px";
+                sidebarOpen = !sidebarOpen;
+            });
+        });
+    </script>
+</body>
+</html>

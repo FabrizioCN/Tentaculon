@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    margin-bottom: 0px;
+    font-family: Arial, sans-serif;
+    background-image: url('../imgcarta/FONDOMARINO.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    max-width: 100vw;
+}
+
+/* BARRA SUPERIOR */
+.franja-superior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #00163a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+    z-index: 1001;
+    gap: 15px;
+}
+
+.franja-textos {
+    font-size: 18px;
+    white-space: nowrap;
+    text-align: right;
+    max-width: 70vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.franja-textos a {
+  color: inherit;     /* herencia de color*/
+  text-decoration: none;  
+}
+
+.franja-textos a:visited {
+  color: inherit;    
+}
+
+.franja-textos a:hover,
+.franja-textos a:focus {
+  color: inherit;       /* se ajusta el color al pasar el mouse */
+  text-decoration: none;
+}
+
+.menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.rutas {
+  font-size: 14px;
+  color: white;
+  opacity: 0.95;
+  margin-left: 15px;
+}
+
+.titulo-nosotros-barra {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px #6f4f2b;
+  font-family: 'Georgia', serif;
+}
+
+/* SIDEBAR */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    left: auto;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+}
+
+.sidebar.activo {
+  left: 0;
+}
+
+.sidebar-item {
+    margin: 15px 20px;
+    padding: 12px;
+    border: 2px solid red;
+    color: white;
+    background-color: black;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar-item:hover {
+    background-color: #111;
+}
+.sidebar-item a {
+  color: inherit;          
+  text-decoration: none;    
+}
+
+.sidebar-item a:visited {
+  color: inherit;           
+}
+
+.sidebar-item a:hover,
+.sidebar-item a:focus {
+  color: inherit;           
+  text-decoration: none;
+}
+
+
+.contenedorCarta2{
+    background-image: url('../imgcarta/fondoCarta1.jpg');
+    margin: 90px 200px 10px 200px;
+    color: #001743;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 70px;
+   
+}
+
+.logoCarta{
+    width:155px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+}
+.pulpo3{
+   width:210px;
+   display: block;
+   margin-left:80px;
+}
+h2,h3,p{
+  padding-top:5px; 
+}
+.cajaChaufaymas{
+    padding-right: 170px;
+    border-right: 10px dotted #001743;
+}
+.cajaChaufaymas,.cajaJaleasGustitos{
+    display: inline-block;
+    margin-left: 30px;
+    margin-right:20px;
+    vertical-align: top; 
+}
+.cajaJaleasGustitos {
+    position: relative;
+    top: -150px; 
+    padding-top: 25px;
+    border-top: 10px dotted #001743;
+}
+.pulpo4{
+    width: 210px;
+    display: block;
+    margin-left: 40px;
+}
+
+.tituloChaufa,.tituloJaleas{
+    color: #001743;
+    background: linear-gradient(to bottom, white 50%, #6cc3b7 50%);
+    padding-left: 25px;
+}
+.tituloCompartetusGustitos{
+    color: #001743;
+    background: linear-gradient(to bottom, white 50%, #a6a6a6 50%);
+    padding-left: 10px;
+}
+
+.fraseCarta1{
+    color: white;
+    margin: 2px 250px 10px 250px;
+    background-color: #505050;
+    text-align: center;
+}
+
+.botones{
+    margin-top: -85px;
+    margin-left: 35px;
+}
+
+.botones a {
+    border: 3px solid #6cc3b7;  
+    border-radius: 30%;         
+    color: black;
+    text-decoration: none;
+    padding: 8px;
+    margin-right: 30px;
+  
+}
+
+
+@media (max-width: 1200px) {
+    .contenedorCarta2 {
+        margin: 80px 50px 20px;
+    }
+    .cajaChaufaymas, 
+    .cajaJaleasGustitos {
+        margin-right: 30px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contenedorCarta2 {
+        margin: 70px 30px 15px;
+    }
+    .cajaChaufaymas {
+        border-right-width: 5px;
+        padding-right: 15px;
+    }
+    .cajaJaleasGustitos {
+        top: -80px;
+        border-top-width: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedorCarta2 {
+        margin: 60px 15px 10px;
+    }
+    .cajaChaufaymas, 
+    .cajaJaleasGustitos {
+        display: block;
+        width: 90%;
+        margin: 0 auto 25px;
+        padding: 15px;
+        border-right: none;
+        border-top-width: 3px;
+    }
+    .cajaJaleasGustitos {
+        top: 0;
+        margin-top: 30px;
+    }
+    .pulpo3, 
+    .pulpo4 {
+        width: 150px;
+        margin: 0 auto 20px;
+    }
+    .fraseCarta1 {
+        width: 90%;
+        padding: 12px;
+        font-size: 14px;
+        margin: 15px auto;
+    }
+    .botones {
+        margin-top: 30px;
+        padding-bottom: 20px;
+    }
+    .botones a {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tituloChaufa, 
+    .tituloJaleas, 
+    .tituloCompartetusGustitos 
+    {
+        font-size: 1.1em;
+        padding-left: 15px;
+    }
+    
+    .fraseCarta1 {
+        width: 95%;
+        padding: 10px;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    .botones a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}

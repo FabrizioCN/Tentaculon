@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NUESTRAS SEDESl</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/stylesedes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../imagenes/logotenta.png">
+</head>
+<body>
+
+    <!-- Barra superior -->
+    <div class="franja-superior">
+        <div class="franja-textos"><a href="../../index.html">Inicio</a> / 
+            <a href="../NOSOTROS/nosotres.html">Nosotros</a> / 
+            <a href="../CARTA/carta1.html">Carta</a> / 
+            <a href="../NUESTRAS SEDES/sedes.html">Sedes</a>
+        </div>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </div>
+
+    <!-- Barra lateral -->
+    <nav class="navbar">
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-item"><a href="../../index.html">INICIO</a></div>
+            <div class="sidebar-item"><a href="../NOSOTROS/nosotres.html">NOSOTROS</a></div>
+            <div class="sidebar-item"><a href="../CARTA/carta1.html">CARTA</a></div>
+            <div class="sidebar-item"><a href="../../Seguridad/register.html">DELIVERY</a></div>
+            <div class="sidebar-item"><a href="../HORARIO ATENCION/horarios.html">HORARIO DE ATENCIÓN</a></div>
+            <div class="sidebar-item"><a href="../NUESTRAS SEDES/sedes.html">NUESTRAS SEDES</a></div>
+        </div>
+    </nav>
+
+    <!-- Funcionalidad del menú -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuIcon = document.getElementById("menu-icon");
+            const sidebar = document.getElementById("sidebar");
+            let sidebarOpen = false;
+
+            menuIcon.addEventListener("click", () => {
+                sidebar.style.width = sidebarOpen ? "0" : "270px";
+                sidebarOpen = !sidebarOpen;
+            });
+        });
+    </script>
+ <div class="titulo">NUESTRAS SEDES</div>
+
+    <section class="sede">
+        <img src="imgsedes/sede1.png" alt="Sede 1">
+        <div class="recuadro">
+            <div class="texto">
+                <strong>UBICACIÓN:</strong><br>
+                Sede Paseo de la Solidaridad Mz. A1 Lt. 17<br>
+                Sector Alfonso Ugarte - Pamplona Alta<br>
+                En el cruce con Av. San Luis<br>
+                SJM - Lima - Perú
+            </div>
+            <div class="sede-num">SEDE 1</div>
+            <a class="boton" href="https://maps.app.goo.gl/uhb73uztScTXBCDQ8" target="_blank" rel="noopener noreferrer">Ir -&gt;</a>
+        </div>
+    </section>
+
+    <section class="sede">
+        <img src="imgsedes/sede2.png" alt="Sede 2">
+        <div class="recuadro">
+            <div class="texto">
+                <strong>UBICACIÓN:</strong><br>
+                Sede Av. Hernando de Lavalle 316, 15056<br>
+                Señor de Muruhuay<br>
+                (Alt. del mercado Ciudad de Dios)<br>
+                SJM - Lima - Perú
+            </div>
+            <div class="sede-num">SEDE 2</div>
+            <a class="boton" href="https://maps.app.goo.gl/Q8xTrXe17SZWcu6E7 " target="_blank" rel="noopener noreferrer">Ir -&gt;</a>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pedidos - El Tentaculón</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/PEDIDOSCSS.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" href="imagenes/logotenta.png">
+</head>
+<body>
+
+    <!-- Barra superior -->
+    <div class="franja-superior">
+        <div class="franja-textos"><a href="../../index.html">Inicio</a> / 
+            <a href="../NOSOTROS/nosotres.html">Nosotros</a> / 
+            <a href="../CARTA/carta1.html">Carta</a> / 
+            <a href="../NUESTRAS SEDES/sedes.html">Sedes</a>
+        </div>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </div>
+
+    <!-- Barra lateral -->
+    <nav class="navbar">
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-item"><a href="../../index.html">INICIO</a></div>
+            <div class="sidebar-item"><a href="../NOSOTROS/nosotres.html">NOSOTROS</a></div>
+            <div class="sidebar-item"><a href="../CARTA/carta1.html">CARTA</a></div>
+            <div class="sidebar-item"><a href="DELIVERY.html">DELIVERY</a></div>
+            <div class="sidebar-item"><a href="../HORARIO ATENCION/horarios.html">HORARIO DE ATENCIÓN</a></div>
+            <div class="sidebar-item"><a href="../NUESTRAS SEDES/sedes.html">NUESTRAS SEDES</a></div>
+        </div>
+    </nav>
+
+    <div class="contenedor-pedidos">
+        <center><h1>TUS PEDIDOS</h1></center>
+
+        <div class="tabla-pedidos">
+            <div class="tabla-header">
+                <div>Descripción</div>
+                <div>Cantidad</div>
+                <div>Precio unidad</div>
+                <div>Subtotal</div>
+            </div>
+            <div id="cuerpo-tabla"></div>
+            <div class="total-fila">
+                <div class="etiqueta-total">TOTAL:</div>
+                <div></div>
+                <div></div>
+                <div class="valor-total" id="valor-total">S/ 0.00</div>
+            </div>
+        </div>
+
+        <form id="formPedidos" action="insertadoPedidos.jsp" method="post">
+             <!-- Los inputs serán creados por JS -->
+        </form>
+
+
+        <button class="volver" type="button" onclick="enviarPedidos()">Continuar</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+            const cuerpo = document.getElementById("cuerpo-tabla");
+
+            if (pedidos.length === 0) {
+                cuerpo.innerHTML = "<div style='text-align:center; padding: 20px;'>No has seleccionado ningún plato.</div>";
+            } else {
+                pedidos.forEach(p => {
+                    const fila = document.createElement("div");
+                    fila.classList.add("fila");
+
+                    const precioNumero = parseFloat(p.precio.replace("S/", "").trim());
+
+                    const descripcion = document.createElement("div");
+                    descripcion.textContent = p.nombre;
+
+                    const cantidad = document.createElement("div");
+                    const inputCantidad = document.createElement("input");
+                    inputCantidad.type = "number";
+                    inputCantidad.min = "1";
+                    inputCantidad.max = "15";
+                    inputCantidad.value = p.cantidad || 1;
+
+                    const precio = document.createElement("div");
+                    precio.textContent = p.precio;
+
+                    const subtotal = document.createElement("div");
+                    subtotal.classList.add("subtotal");
+                    const subtotalCalc = precioNumero * (p.cantidad || 1);
+                    subtotal.textContent = `S/ ${subtotalCalc.toFixed(2)}`;
+
+                    // Guardar inicialmente si no estaba
+                    p.cantidad = p.cantidad || 1;
+                    p.subtotal = subtotalCalc.toFixed(2);
+
+                    inputCantidad.addEventListener("input", () => {
+                        let cantidadValor = parseInt(inputCantidad.value) || 1;
+                        cantidadValor = Math.min(Math.max(cantidadValor, 1), 15);
+                        inputCantidad.value = cantidadValor;
+
+                        const nuevoSubtotal = precioNumero * cantidadValor;
+                        subtotal.textContent = `S/ ${nuevoSubtotal.toFixed(2)}`;
+
+                        p.cantidad = cantidadValor;
+                        p.subtotal = nuevoSubtotal.toFixed(2);
+
+                        localStorage.setItem("pedidos", JSON.stringify(pedidos));
+                        actualizarTotal();
+                    });
+
+                    cantidad.appendChild(inputCantidad);
+                    fila.appendChild(descripcion);
+                    fila.appendChild(cantidad);
+                    fila.appendChild(precio);
+                    fila.appendChild(subtotal);
+
+                    cuerpo.appendChild(fila);
+                });
+
+                localStorage.setItem("pedidos", JSON.stringify(pedidos)); // Guarda cantidades iniciales
+                actualizarTotal();
+            }
+
+            // Toggle menú lateral
+            const menuIcon = document.getElementById("menu-icon");
+            const sidebar = document.getElementById("sidebar");
+            let sidebarOpen = false;
+
+            menuIcon.addEventListener("click", () => {
+                sidebar.style.width = sidebarOpen ? "0" : "270px";
+                sidebarOpen = !sidebarOpen;
+            });
+        });
+
+        function actualizarTotal() {
+            const subtotales = document.querySelectorAll(".subtotal");
+            let total = 0;
+            subtotales.forEach(sub => {
+                const valor = parseFloat(sub.textContent.replace("S/", "").trim());
+                if (!isNaN(valor)) total += valor;
+            });
+            document.getElementById("valor-total").textContent = `S/ ${total.toFixed(2)}`;
+        }
+
+        function enviarPedidos() {
+            const pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+            const form = document.getElementById("formPedidos");
+
+            if (pedidos.length === 0) {
+                alert("No hay pedidos para enviar.");
+                return;
+            }
+
+            form.innerHTML = "";
+            let total = 0;
+
+            pedidos.forEach(p => {
+                const nombre = p.nombre;
+                const cantidad = parseInt(p.cantidad);
+                const subtotal = parseFloat(p.subtotal);
+
+                form.innerHTML += `<input type="hidden" name="nombresPlatos" value="${nombre}">`;
+                form.innerHTML += `<input type="hidden" name="cantidades" value="${cantidad}">`;
+                form.innerHTML += `<input type="hidden" name="subprecios" value="${subtotal}">`;
+
+                total += subtotal;
+            });
+
+            form.innerHTML += `<input type="hidden" name="total_pedido" value="${total.toFixed(2)}">`;
+
+            // Simulación de datos adicionales
+            const hoy = new Date().toISOString().split('T')[0];
+            form.innerHTML += `<input type="hidden" name="fecha_pedido" value="${hoy}">`;
+            form.innerHTML += `<input type="hidden" name="tipo_boleta" value="boleta_simple">`;
+            form.innerHTML += `<input type="hidden" name="distrito_id" value="1">`;
+            form.innerHTML += `<input type="hidden" name="metodo_pago" value="1">`;
+            form.innerHTML += `<input type="hidden" name="nombre" value="Cliente Demo">`;
+            form.innerHTML += `<input type="hidden" name="apellidos" value="Prueba Uno">`;
+            form.innerHTML += `<input type="hidden" name="calle" value="Calle Demo 123">`;
+            form.innerHTML += `<input type="hidden" name="Referencia" value="Frente al parque">`;
+            form.innerHTML += `<input type="hidden" name="celular" value="912345678">`;
+            form.innerHTML += `<input type="hidden" name="email" value="demo@gmail.com">`;
+            form.innerHTML += `<input type="hidden" name="dni" value="12345678">`;
+            form.innerHTML += `<input type="hidden" name="ruc" value="">`;
+
+            form.submit();
+        }
+    </script>
+
+</body>
+</html>

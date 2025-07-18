@@ -1,0 +1,115 @@
+    <!DOCTYPE html>
+<html>
+    <head>
+        <title>PAGINA PRINCIPAL</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="CSS/estilo.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="icon" href="imagenes/logotenta.png">
+    </head>
+    <body>
+        
+       <!-- Barra superior -->
+    <div class="franja-superior">
+        <div class="franja-textos"><a href="./index.html">Inicio</a> / 
+            <a href="./SECCIONES/NOSOTROS/nosotres.html">Nosotros</a> / 
+            <a href="./SECCIONES/CARTA/carta1.html">Carta </a> / 
+            <a href="./SECCIONES/NUESTRAS SEDES/sedes.html">Sedes</a>
+        </div>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </div>
+
+    <!-- Barra lateral -->
+    <nav class="navbar">
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-item"><a href="./index.html">INICIO</a></div>
+            <div class="sidebar-item"><a href="./SECCIONES/NOSOTROS/nosotres.html">NOSOTROS</a></div>
+            <div class="sidebar-item"><a href="./SECCIONES/CARTA/carta1.html">CARTA</a></div>
+            <div class="sidebar-item"><a href="./Seguridad/register.html">DELIVERY</a></div>
+            <div class="sidebar-item"><a href="./SECCIONES/HORARIO ATENCION/horarios.html">HORARIO DE ATENCIÓN</a></div>
+            <div class="sidebar-item"><a href="./SECCIONES/NUESTRAS SEDES/sedes.html">NUESTRAS SEDES</a></div>
+        </div>
+    </nav>
+        <!-- funcionamiento del la barra -->
+        <script>
+            const menuIcon = document.getElementById('menu-icon');
+            const navLinks = document.getElementById('nav-links');
+
+            menuIcon.addEventListener('click', () => {
+                navLinks.style.display = (navLinks.style.display === 'flex') ? 'none' : 'flex';
+            });
+        </script>
+        <div class="logo-container">
+            <img class="logo" src="imagenes/logotenta.png" alt="pulpo rojo con bigote">
+        </div>
+        <div class="titulo">
+        <h1><span class="el">EL</span> <br><span class="tentaculon">TENTACULÓN</span></h1>
+        </div>
+        <div class="bienvenidos">   
+            <h2>¡BIENVENIDOS!</h2>
+            <p>
+                Es un placer recibirlos en nuestro restaurante, EL<br>
+                TENTACULÓN un lugar acogedor donde el sabor del mar cobra<br>
+                vida en cada plato. Nos especializamos en comidas marinas<br>
+                frescas como ceviches, mariscos y mucho más, preparados con<br>
+                pasión, creatividad y los ingredientes más selectos del océano.
+            </p>
+        </div>
+        <div class="MS">
+            <div class="mision">
+                <h2>MISIÓN</h2>
+                <p>Brindar a nuestros clientes<br>
+                    una experiencia culinaria<br>
+                    única, ofreciendo comidas<br>
+                    marinas frescas y de alta<br>
+                    calidad, preparadas con<br>
+                    pasión, creatividad y respeto<br>
+                    por los sabores del mar, en<br>
+                    un ambiente acogedor y con<br>
+                    un servicio cálido y atento.
+                </p>
+            </div>
+            
+            <div class="vision">
+                <h2>VISIÓN</h2>
+                <p>Ser reconocidos como uno<br>
+                    de los mejores restaurantes<br>
+                    de comida marina en la<br>
+                    región, destacando por<br>
+                    nuestra excelencia<br>
+                    gastronómica, innovación en<br>
+                    cada plato y compromiso con<br>
+                    la frescura y autenticidad de<br>
+                    los productos del mar.
+                </p>
+            </div>
+        </div>    
+        <h2 class="frase">"Ven y déjate atrapar por los sabores del mar... ¡en El<br>
+            Tentaculón comerás como un verdadero capitán!"
+        </h2>
+        <h3 class="cel">Cel: +51 944 140 438</h3>
+        <h3 class="direccion">
+            <a href="https://maps.app.goo.gl/Dyf1hWzxEqQrpDp6A">Dirección: Av. paseo solidaridad MZ A1 LT17, San Juan de Miraflores</a>
+        </h3>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuIcon = document.getElementById("menu-icon");
+    const sidebar = document.getElementById("sidebar");
+    let sidebarOpen = false;
+
+    menuIcon.addEventListener("click", () => {
+      if (sidebarOpen) {
+        sidebar.style.width = "0";
+      } else {
+        sidebar.style.width = "270px"; // ancho del menú lateral
+      }
+      sidebarOpen = !sidebarOpen;
+    });
+  });
+</script>
+    </body>
+    
+</html>

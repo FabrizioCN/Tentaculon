@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro Cliente - Delivery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/estiloRGeneral.css">
+    <link rel="icon" href="imagenes/logotenta.png">
+</head>
+<body>
+    <!-- Barra superior -->
+    <div class="franja-superior">
+        <div class="franja-textos">Inicio / Nosotros / Carta / Sedes</div>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </div>
+
+    <!-- Barra lateral -->
+    <nav class="navbar">
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-item"><a href="../../index.html">INICIO</a></div>
+            <div class="sidebar-item"><a href="../NOSOTROS/nosotres.html">NOSOTROS</a></div>
+            <div class="sidebar-item"><a href="../CARTA/carta1.html">CARTA</a></div>
+            <div class="sidebar-item"><a href="DELIVERY.html">DELIVERY</a></div>
+            <div class="sidebar-item"><a href="../HORARIO ATENCION/horarios.html">HORARIO DE ATENCIÓN</a></div>
+            <div class="sidebar-item"><a href="../NUESTRAS SEDES/sedes.html">NUESTRAS SEDES</a></div>
+        </div>
+    </nav>
+
+    <!-- Funcionalidad del menú -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuIcon = document.getElementById("menu-icon");
+            const sidebar = document.getElementById("sidebar");
+            let sidebarOpen = false;
+
+            menuIcon.addEventListener("click", () => {
+                sidebar.style.width = sidebarOpen ? "0" : "270px";
+                sidebarOpen = !sidebarOpen;
+            });
+        });
+    </script>
+    
+    <div class="contenedorForm">
+        <center>
+        <h1>DELIVERY REGISTRO</h1>
+        <input type="text" id="nombre" placeholder="Nombre" required><p>
+        <input type="text" id="apellidos" placeholder="Apellidos" required><p>
+        <input type="text" id="calle" placeholder="Calle" required><p>
+        <input type="text" id="Referencia" placeholder="Referencia" required><p>
+
+            <h3>Distrito:</h3>
+        <select id="distrito_id" required>
+            <option value="">-- Seleccionar distrito --</option>
+            <option value="1">Miraflores</option>
+            <option value="2">Santiago Surco</option>
+            <option value="3">Villa Maria</option>
+        </select><p>
+
+        <h3>Fecha del Pedido:</h3>
+        <input type="date" id="fecha_pedido" required><p>
+
+        <input type="text" id="celular" placeholder="Celular" required><p>
+        <input type="email" id="email" placeholder="Email" required><p>
+
+            <h3>Tipo de boleta:</h3>
+        <select id="tipo_boleta" onchange="mostrarCampos()" required>
+            <option value="boleta_simple">Boleta Simple</option>
+            <option value="factura">Factura</option>
+            <option value="boleta_dni">Boleta con DNI</option>
+        </select><p>
+
+        <div id="dni_campo" style="display: none;">
+            <input type="text" id="dni" placeholder="Ingrese su DNI">
+        </div>
+
+        <div id="ruc_campo" style="display: none;">
+            <input type="text" id="ruc" placeholder="Ingrese su RUC">
+        </div><p>
+        <div class="campoMetodoPago">
+        <h3>Método de Pago:</h3>
+        <input type="radio" name="metodo_pago" value="1" required>Efectivo<br>
+        <input type="radio" name="metodo_pago" value="2">Tarjeta<br>
+        <input type="radio" name="metodo_pago" value="3">Yape<p>
+        </div>
+        <button onclick="enviarTodo()">Siguiente</button>
+       
+        </center>
+    </div>
+
+    <!-- FORMULARIO PARA ENVIAR -->
+    <form id="formFinal" action="guardadoGeneral.jsp" method="post">
+        <input type="hidden" name="nombre">
+        <input type="hidden" name="apellidos">
+        <input type="hidden" name="calle">
+        <input type="hidden" name="Referencia">
+        <input type="hidden" name="celular">
+        <input type="hidden" name="email">
+        <input type="hidden" name="tipo_boleta">
+        <input type="hidden" name="dni">
+        <input type="hidden" name="ruc">
+        <input type="hidden" name="distrito_id">
+        <input type="hidden" name="fecha_pedido">
+        <input type="hidden" name="metodo_pago">
+
+        
+        <div id="contenedorPlatos"></div>
+    </form>
+
+    <script>
+        function mostrarCampos() {
+            const tipo = document.getElementById("tipo_boleta").value;
+            document.getElementById("dni_campo").style.display = (tipo === "boleta_dni") ? "block" : "none";
+            document.getElementById("ruc_campo").style.display = (tipo === "factura") ? "block" : "none";
+        }
+
+        function enviarTodo() {
+            const form = document.getElementById("formFinal");
+
+            // Obtener los datos del carrito 
+            const pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+            const contenedor = document.getElementById("contenedorPlatos");
+            contenedor.innerHTML = ""; // limpiar inputs anteriores
+
+            pedidos.forEach(p => {
+                // Lista de los nombres del plato
+                const inputNombre = document.createElement("input");
+                inputNombre.type = "hidden";
+                inputNombre.name = "nombresPlatos";
+                inputNombre.value = p.nombre;
+                contenedor.appendChild(inputNombre);
+
+                // Cantidad
+                const inputCantidad = document.createElement("input");
+                inputCantidad.type = "hidden";
+                inputCantidad.name = "cantidades";
+                inputCantidad.value = p.cantidad || 1;
+                contenedor.appendChild(inputCantidad);
+
+                // Subtotal
+                const inputSub = document.createElement("input");
+                inputSub.type = "hidden";
+                inputSub.name = "subprecios";
+                inputSub.value = p.subtotal || 0;
+                contenedor.appendChild(inputSub);
+            });
+
+            // Relleno datos del cliente
+            form.nombre.value = document.getElementById("nombre").value;
+            form.apellidos.value = document.getElementById("apellidos").value;
+            form.calle.value = document.getElementById("calle").value;
+            form.Referencia.value = document.getElementById("Referencia").value;
+            form.celular.value = document.getElementById("celular").value;
+            form.email.value = document.getElementById("email").value;
+            form.tipo_boleta.value = document.getElementById("tipo_boleta").value;
+            form.dni.value = document.getElementById("dni")?.value || "";
+            form.ruc.value = document.getElementById("ruc")?.value || "";
+            form.distrito_id.value = document.getElementById("distrito_id").value;
+            form.fecha_pedido.value = document.getElementById("fecha_pedido").value;
+
+            // Método de pago
+            const metodo = document.querySelector('input[name="metodo_pago"]:checked');
+            if (metodo) {
+                form.metodo_pago.value = metodo.value;
+            }
+
+            form.submit();
+        }
+    </script>
+
+</body>
+</html>

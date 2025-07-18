@@ -1,0 +1,285 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 60px; 
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../imagenes/fondo1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    max-width: 100vw;
+    color: white;
+}
+
+/* BARRA SUPERIOR */
+.franja-superior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #00163a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+    z-index: 1001;
+    gap: 15px;
+}
+
+
+.franja-textos {
+    font-size: 18px;
+    white-space: nowrap;
+    text-align: right;
+    max-width: 70vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.franja-textos a,
+.franja-textos a:visited,
+.franja-textos a:focus,
+.franja-textos a:hover,
+.franja-textos a:active {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+
+.menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* SIDEBAR */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0; 
+    left: auto; 
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+    
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 36px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar-item {
+    margin: 15px 20px;
+    padding: 12px;
+    border: 2px solid red;
+    color: white;
+    background-color: black;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar-item:hover {
+    background-color: #111;
+}
+.sidebar .sidebar-item a:link,
+.sidebar .sidebar-item a:visited,
+.sidebar .sidebar-item a:hover,
+.sidebar .sidebar-item a:focus,
+.sidebar .sidebar-item a:active {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+
+/* LOGO */
+.logo {
+    position: absolute; 
+    margin-top: -70px;
+    left: 48%;
+    top: 9%;
+    transform: translateX(-20%);
+    width: 600px; 
+    background-color: transparent;
+    z-index: -1;
+}
+.titulo{
+    margin-top: -60px;
+}
+/* TITULOS */
+h1 {
+    text-align: center;
+    font-size: 180px;
+    color: white;
+    margin-top: 10px;
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+.el {
+    display: inline-block;
+    padding-right: 35vw;
+    font-size: 280px;
+    margin-top: 40px; 
+    margin-bottom: -50px;
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+
+.bienvenidos {
+    margin-top: -120px;
+    text-align: center;
+    border-top: 8px solid white;
+    border-bottom: 8px solid white;
+    padding-top: 25px;
+    padding-bottom: 35px;
+}
+
+.bienvenidos h2 {
+    font-size: 70px;
+    font-weight: bold;
+    margin: 7px;
+}
+
+.bienvenidos p {
+    font-family: "League-Spartan";
+    font-weight: bold;
+    font-size: 30px; 
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+/* MISIÓN Y VISIÓN */
+.MS {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.MS h2 {
+    font-family: "Asset";
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.MS div {
+    display: inline-block;
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 90%;
+    vertical-align: top;
+}
+
+.MS p {
+    font-size: 20px;
+}
+
+.frase {
+    text-align: center;
+    font-family: "Pacifico", "cursive";
+    font-weight: normal;
+    font-size: 35px;
+    margin: 20px;
+}
+
+
+.cel {
+    font-size: 23px;
+    color: white;
+    text-align: left;
+    padding-left: 80px;
+}
+
+.direccion {
+    font-size: 23px;
+    text-align: left;
+    padding-left: 80px;
+    padding-bottom: 30px;
+}
+
+.direccion a {
+    color: white;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .franja-textos {
+        font-size: 14px;
+        max-width: 60vw;
+    }
+
+    .menu-icon {
+        font-size: 24px;
+    }
+
+    .cel,
+    .direccion {
+        padding-left: 40px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .franja-textos {
+        font-size: 12px;
+        max-width: 50vw;
+    }
+
+    .cel,
+    .direccion {
+        padding-left: 25px;
+        font-size: 18px;
+    }
+}
+@media (max-width: 600px) {
+    .logo {
+        width: 300px;
+        top: 3%;
+        left: 60%;
+        transform: translateX(-50%);
+        margin-top: -10px;
+    }
+
+    .titulo {
+        margin-top: -30px;
+    }
+
+    h1 {
+        font-size: 60px;
+        margin-top: -50px !important;
+    }
+
+    .el {
+        font-size: 120px;
+        padding-right: -30px;
+        margin-top: 30px;
+        margin-bottom: -5px;
+        display: block;
+        text-align: center;
+    }
+}
+@media (max-width: 600px) {
+    .bienvenidos {
+        margin-top: 30px; 
+        padding-top: 15px;
+        padding-bottom: 25px;
+    }
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>CARTA4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/estiloCarta4.css">
+        <link rel="icon" href="imgcarta/logotenta.png">
+    </head>
+    <body>
+        <!-- Barra superior -->
+    <div class="franja-superior">
+        <div class="franja-textos"><a href="../../index.html">Inicio</a> / 
+            <a href="../NOSOTROS/nosotres.html">Nosotros</a> / 
+            <a href="../CARTA/carta1.html">Carta</a> / 
+            <a href="../NUESTRAS SEDES/sedes.html">Sedes</a>
+        </div>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </div>
+
+    <!-- Barra lateral -->
+    <nav class="navbar">
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-item"><a href="../../index.html">INICIO</a></div>
+            <div class="sidebar-item"><a href="../NOSOTROS/nosotres.html">NOSOTROS</a></div>
+            <div class="sidebar-item"><a href="../CARTA/carta1.html">CARTA</a></div>
+            <div class="sidebar-item"><a href="../../Seguridad/register.html">DELIVERY</a></div>
+            <div class="sidebar-item"><a href="../HORARIO ATENCION/horarios.html">HORARIO DE ATENCIÓN</a></div>
+            <div class="sidebar-item"><a href="../NUESTRAS SEDES/sedes.html">NUESTRAS SEDES</a></div>
+        </div>
+    </nav>
+        <script>
+            const menuIcon = document.getElementById('menu-icon');
+            const navLinks = document.getElementById('nav-links');
+
+            menuIcon.addEventListener('click', () => {
+                navLinks.style.display = (navLinks.style.display === 'flex') ? 'none' : 'flex';
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const menuIcon = document.getElementById("menu-icon");
+                const sidebar = document.getElementById("sidebar");
+                let sidebarOpen = false;
+
+                menuIcon.addEventListener("click", () => {
+                    if (sidebarOpen) {
+                        sidebar.style.width = "0";
+                    } else {
+                        sidebar.style.width = "270px"; // ancho del menú lateral
+                    }
+                    sidebarOpen = !sidebarOpen;
+                });
+            });
+        </script>
+
+        <div class="contenedorCarta4">
+            <img  class="logoCarta" src="imgcarta/logoCarta.png">
+            <img class="pulpo7" src="imgcarta/7.png">
+
+            <div class="cajaChicharron">
+                <h2 class="tituloChicharron">CHICHARRÓN</h2>
+                <h3>CHICHARRÓN MIXTO</h3>
+                <p>Trozos de pescado frito,<br> 
+                    langostinos, aros de<br>
+                    calamar, choros y sarsa<br>
+                    criolla. .........................................................S/.21
+                </p>
+
+                <h3>CHICHARRÓ DE<br> 
+                    PESCADO</h3>
+                <p>Trozos de pescado<br> 
+                    crocante con yucas <br> 
+                    doradas y acompañado de<br>
+                    sarsa criolla.     ...............................................S/.16   
+                </p>
+                
+                <h3>CHICHARRÓN DE<br>
+                    POTA</h3>
+                <p>Tiras de pota crocante con<br> 
+                    yucas doradas y  <br>
+                    acompañado de sarsa<br>
+                    criolla.    ..........................................................S/.11   
+                </p>
+                
+                <div class="cajadelivery">
+                    <h2 class="textDelivery">DELIVERY Y A TODO SJM</h2>
+                    <p>Av. Hernando Lavaller 3116, SJM</p>
+                    <p>Mz. A1 Lt. 17 Sect. Alfonso<br>
+                        Ugarte Pamplona<br> 
+                       Alta, SJM
+                    </p>
+                </div>
+            </div>
+
+            <div class="cajaBebidasPorciones">
+                <h2 class="tituloBebidas">BEBIDAS</h2>
+                <p>
+                 Agua mineral ..................................S/.2   
+                </p>
+                <p>
+                 Coca o inka de 600ml. ...................S/.4   
+                </p>
+                <p>
+                  Inka Kola 1L. ..................................S/.6  
+                </p>
+                <p>
+                    Coca o inka de 2L ½. .....................S/.10
+                </p>
+                <p>
+                    Coca o inka de 1L ½. ......................S/.8
+                </p>
+                <p>
+                    Cerveza Pilsen 1L. .........................S/.10
+                </p>
+                <p>
+                    Vaso de chicha morada. .................S/.2
+                </p>
+                <p>
+                    Chicha Morada ½L. ........................S/.4
+                </p>
+                <p>
+                    Chicha Morada 1L. ..........................S/.8
+                </p>
+                
+                <h2 class="tituloPorciones">PORCIONES</h2>
+                <p>
+                    Porción de Arroz. ..............................S/.4
+                </p>
+                <p>
+                    Porción de Choclo. ............................S/.4
+                </p>
+                <p>
+                    Porción de Yuca Frita. .......................S/.4
+                </p>
+                <p>
+                    Porción de Arroz. ...............................S/.5
+                </p>
+                
+                
+                <div><img class="pulpo8" src="imgcarta/8.png"></div>
+            </div>
+            <div class="botones">
+                <a href="carta3.html">
+                    <i>←</i> 
+                </a>
+
+            </div>    
+        </div                                                                           >
+        
+
+        <p class="fraseCarta1">En “EL TENTACULÓN”, cada cliente es parte de nuestra historia. Te esperamos con los brazos abiertos<br>
+            y el sabor del mar en cada plato.</p>
+
+        
+
+    </body>
+</html>

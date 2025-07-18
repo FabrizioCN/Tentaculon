@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DELIVERY</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/DELIVERYCSS.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" href="imagenes/logotenta.png">
+</head>
+<body>
+
+    <!-- Barra superior -->
+    <div class="franja-superior">
+        <div class="franja-textos"><a href="../../index.html">Inicio</a> / 
+            <a href="../NOSOTROS/nosotres.html">Nosotros</a> / 
+            <a href="../CARTA/carta1.html">Carta</a> / 
+            <a href="../NUESTRAS SEDES/sedes.html">Sedes</a>
+        </div>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </div>
+
+    <!-- Barra lateral -->
+    <nav class="navbar">
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-item"><a href="../../index.html">INICIO</a></div>
+            <div class="sidebar-item"><a href="../NOSOTROS/nosotres.html">NOSOTROS</a></div>
+            <div class="sidebar-item"><a href="../CARTA/carta1.html">CARTA</a></div>
+            <div class="sidebar-item"><a href="DELIVERY.html">DELIVERY</a></div>
+            <div class="sidebar-item"><a href="../HORARIO ATENCION/horarios.html">HORARIO DE ATENCIÓN</a></div>
+            <div class="sidebar-item"><a href="../NUESTRAS SEDES/sedes.html">NUESTRAS SEDES</a></div>
+        </div>
+    </nav>
+
+    <!-- Funcionalidad del menú -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuIcon = document.getElementById("menu-icon");
+            const sidebar = document.getElementById("sidebar");
+            let sidebarOpen = false;
+
+            menuIcon.addEventListener("click", () => {
+                sidebar.style.width = sidebarOpen ? "0" : "270px";
+                sidebarOpen = !sidebarOpen;
+            });
+        });
+    </script>
+
+    
+    
+  <div class="carta-container">
+  <div class="carta">
+        <div class="logo-container">
+          <img class="logo" src="imagenes/Logocentro.png" alt="pulpo rojo con bigote carta">
+        </div>
+   
+
+        <div class="menu-grid">
+        <div class="titulo-categoria">Aperitivos</div>
+        <div class="lista-platos">
+      <ul>
+            <li data-nombre="Leche de tigre carretillero">
+            <div class="texto-precio">
+            Leche de tigre carretillero 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 16</span>
+            </div>
+        </li>
+        
+            <li data-nombre="Leche de tigre">
+            <div class="texto-precio">
+            Leche de tigre 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 11</span>
+            </div>
+        </li>            
+      </ul>
+        </div>
+              
+
+        <div class="titulo-categoria">Combos Marinos</div>
+        <div class="lista-platos">
+      <ul>
+            <li data-nombre="Combo 1">
+            <div class="texto-precio">
+            Combo 1 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+        <span>S/ 18</span>
+        </div>
+            </li>
+        <li data-nombre="Combo 2">
+            <div class="texto-precio">
+            Combo 2 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+        <span>S/ 20</span>
+        </div>
+            </li>
+        <li data-nombre="Combo 3">
+            <div class="texto-precio">
+            Combo 3 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+        <span>S/ 23</span>
+        </div>
+        </li>
+      </ul>
+        </div>
+
+        
+        <div class="titulo-categoria">Dúos Marinos</div>
+        <div class="lista-platos">
+      <ul>
+        <li data-nombre="Dúo 1">
+            <div class="texto-precio">
+            Dúo 1 
+             </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 29</span>
+             </div>
+            </li>
+        <li data-nombre="Dúo 2"> 
+            <div class="texto-precio">
+            Dúo 2 
+             </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 29</span>
+            </div>
+            </li>
+        <li data-nombre="Dúo 3">
+            <div class="texto-precio">
+            Dúo 3 
+             </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 29</span>
+            </div>
+            </li>
+      </ul>
+        </div>
+
+        
+        <div class="titulo-categoria">Tríos Marinos</div>
+        <div class="lista-platos">
+      <ul>
+        <li data-nombre="Trío 1">
+            <div class="texto-precio">
+            Trío 1 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 37</span>
+            </div>
+        </li>
+        <li data-nombre="Trío 2"> 
+            <div class="texto-precio">
+            Trío 2 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 37</span>
+            </div>
+        </li>
+      </ul>
+        </div>
+
+        
+        <div class="titulo-categoria">Chaufas y Más</div>
+        <div class="lista-platos">
+      <ul>
+        <li data-nombre="Arroz con mariscos">
+            <div class="texto-precio">
+            Arroz con mariscos 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 22</span>
+            </div>
+        </li>
+        <li data-nombre="Chaufa de mariscos"> 
+            <div class="texto-precio">
+            Chaufa de mariscos 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 20</span>
+            </div>
+        </li>
+        <li data-nombre="Lomo saltado con chaufa">
+            <div class="texto-precio">
+            Lomo saltado con chaufa 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 20</span>
+            </div>
+        </li>
+        <li data-nombre="Chaufa de pescado">
+            <div class="texto-precio">
+            Chaufa de pescado
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 11</span>
+            </div>
+            <li data-nombre="Chaufa de pollo">
+            <div class="texto-precio">
+            Chaufa de pollo 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 11</span>
+            </div>
+      </ul>
+        </div>
+
+      
+        <div class="titulo-categoria">Chicharrón</div>
+        <div class="lista-platos">
+      <ul>
+        <li data-nombre="Chicharrón mixto">
+            <div class="texto-precio">
+            Chicharrón mixto 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 21</span>
+            </div>
+        <li data-nombre="Chicharrón de pescado">
+            <div class="texto-precio">
+            Chicharrón de pescado 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 16</span>
+            </div>
+        <li data-nombre="Chicharrón de pota">
+            <div class="texto-precio">
+            Chicharrón de pota 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 11</span>
+            </div>
+      </ul>
+        </div>
+
+      
+      <div class="titulo-categoria">Porciones</div>
+      <div class="lista-platos">
+      <ul>
+        <li data-nombre="Porción de arroz ">
+            <div class="texto-precio">
+            Porción de arroz 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 4</span>
+            </div>
+        <li data-nombre="Porción de choclo ">
+            <div class="texto-precio">
+            Porción de choclo 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 4</span>
+            </div>        
+        <li data-nombre="Porción de yuca frita ">
+            <div class="texto-precio">
+            Porción de yuca frita 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 6</span>
+            </div>
+        <li data-nombre="Porción de arroz ">
+            <div class="texto-precio">
+            Porción de arroz 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 5</span>
+            </div>
+      </ul>
+          </div>
+
+      
+      <div class="titulo-categoria">Jaleas</div>
+      <div class="lista-platos">
+      <ul>
+        <li data-nombre="Jaleón de cabrilla entera "> 
+            <div class="texto-precio">
+            Jaleón de cabrilla entera 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 31</span>
+            </div>
+        <li data-nombre="Cabrilla frita ">  
+            <div class="texto-precio">
+            Cabrilla frita 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 19</span>
+            </div>
+        <li data-nombre="Trucha frita ">   
+            <div class="texto-precio">
+            Trucha frita 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 16</span>
+            </div>
+      </ul>
+          </div>
+
+      
+      <div class="titulo-categoria">Fettuccinis</div>
+      <div class="lista-platos">
+      <ul>
+        <li data-nombre="Fettuccini a la huancaína con lomo saltado  ">  
+            <div class="texto-precio">
+            A la huancaína con lomo saltado 
+             </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 22</span>
+            </div>
+        <li data-nombre="Fettuccini a la huancaína con pollo saltado  ">  
+            <div class="texto-precio">
+            A la huancaína con pollo saltado 
+             </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 21</span>
+            </div>
+        <li data-nombre="Fettuccini a la marinera  ">  
+            <div class="texto-precio">
+            A la marinera
+             </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 22</span>
+            </div>
+        <li data-nombre="Fettuccini Saltado  ">  
+            <div class="texto-precio">
+            Saltado 
+             </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 22</span>
+            </div>
+      </ul>
+      </div>
+
+      
+      <div class="titulo-categoria">Sopas</div>
+      <div class="lista-platos">
+      <ul>
+        <li data-nombre="Sudado de filete de pescado ">   
+            <div class="texto-precio">
+            Sudado de filete de pescado 
+             </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 22</span>
+            </div>
+        <li data-nombre="Sudado de viagra de cabrilla entera">   
+            <div class="texto-precio">
+            Sudado de viagra de cabrilla entera
+             </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 22</span>
+            </div>
+        <li data-nombre="Parihuela mixta">   
+            <div class="texto-precio">
+            Parihuela mixta
+             </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 22</span>
+            </div>
+      </ul>
+      </div>
+
+      
+      <div class="titulo-categoria">Bebidas</div>
+      <div class="lista-platos">
+      <ul>
+        <li data-nombre="Agua mineral ">   
+            <div class="texto-precio">
+            Agua mineral 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 2</span>
+            </div>
+        <li data-nombre="Coca o Inka 600ml "> 
+            <div class="texto-precio">
+            Coca o Inka 600ml 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 4</span>
+            </div>
+        <li data-nombre="Inka Kola 1L"> 
+            <div class="texto-precio">
+            Inka Kola 1L 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 6</span>
+            </div>
+        <li data-nombre="Coca o Inka 2L ½ ">
+            <div class="texto-precio">
+            Coca o Inka 2L ½ 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 10</span>
+            </div>
+        <li data-nombre="Coca o Inka 1L ½ "> 
+            <div class="texto-precio">
+            Coca o Inka 1L ½ 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 8</span>
+            </div>
+        <li data-nombre="Cerveza Pilsen 1L ">
+            <div class="texto-precio">
+            Cerveza Pilsen 1L 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 10</span>
+            </div>
+        <li data-nombre="Vaso de chicha morada ">
+            <div class="texto-precio">
+            Vaso de chicha morada 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 2</span>
+            </div>
+        <li data-nombre="Vaso de chicha morada ½L">
+            <div class="texto-precio">
+            Chicha morada ½L 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 4</span>
+            </div>
+        <li data-nombre="Chicha morada 1L">
+            <div class="texto-precio">
+            Chicha morada 1L 
+            </div>
+            <div class="texto-precio">
+            <input type="checkbox">
+            <span>S/ 8</span>
+            </div>
+      </ul>
+          </div>
+    </div>
+
+      <button class="comprar" type="button">COMPRAR </button>
+  </div>
+</div>
+    <script>
+        document.querySelector(".comprar").addEventListener("click", () => {
+    const platosSeleccionados = [];
+    document.querySelectorAll(".lista-platos li").forEach(li => {
+      const checkbox = li.querySelector("input[type='checkbox']");
+      if (checkbox && checkbox.checked) {
+        const nombre = li.getAttribute("data-nombre") || li.textContent.trim();
+        const precio = li.querySelector("span")?.textContent.trim() || "";
+        platosSeleccionados.push({ nombre, precio });
+      }
+    });
+
+    // Guardamos los seleccionados en localStorage
+    localStorage.setItem("pedidos", JSON.stringify(platosSeleccionados));
+
+    // Redirige a la página PEDIDOS
+    window.location.href = "PEDIDOS.html";
+  });
+    </script>
+    
+</body>
+</html>

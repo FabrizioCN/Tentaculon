@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>CARTA3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/estiloCarta3.css">
+        <link rel="icon" href="imgcarta/logotenta.png">
+    </head>
+    <body>
+        <!-- Barra superior -->
+    <div class="franja-superior">
+        <div class="franja-textos"><a href="../../index.html">Inicio</a> / 
+            <a href="../NOSOTROS/nosotres.html">Nosotros</a> / 
+            <a href="../CARTA/carta1.html">Carta</a> / 
+            <a href="../NUESTRAS SEDES/sedes.html">Sedes</a>
+        </div>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </div>
+
+    <!-- Barra lateral -->
+    <nav class="navbar">
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-item"><a href="../../index.html">INICIO</a></div>
+            <div class="sidebar-item"><a href="../NOSOTROS/nosotres.html">NOSOTROS</a></div>
+            <div class="sidebar-item"><a href="../CARTA/carta1.html">CARTA</a></div>
+            <div class="sidebar-item"><a href="../../Seguridad/register.html">DELIVERY</a></div>
+            <div class="sidebar-item"><a href="../HORARIO ATENCION/horarios.html">HORARIO DE ATENCIÓN</a></div>
+            <div class="sidebar-item"><a href="../NUESTRAS SEDES/sedes.html">NUESTRAS SEDES</a></div>
+        </div>
+    </nav>
+        <script>
+            const menuIcon = document.getElementById('menu-icon');
+            const navLinks = document.getElementById('nav-links');
+
+            menuIcon.addEventListener('click', () => {
+                navLinks.style.display = (navLinks.style.display === 'flex') ? 'none' : 'flex';
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const menuIcon = document.getElementById("menu-icon");
+                const sidebar = document.getElementById("sidebar");
+                let sidebarOpen = false;
+
+                menuIcon.addEventListener("click", () => {
+                    if (sidebarOpen) {
+                        sidebar.style.width = "0";
+                    } else {
+                        sidebar.style.width = "270px"; // ancho del menú lateral
+                    }
+                    sidebarOpen = !sidebarOpen;
+                });
+            });
+        </script>
+
+        <div class="contenedorCarta3">
+            <img  class="logoCarta" src="imgcarta/logoCarta.png">
+            <img class="pulpo5" src="imgcarta/5.png">
+
+            <div class="cajaFettuccinis">
+                <h2 class="tituloFettuccinis">FETTUCCINIS</h2>
+                <h3>FETTUCCINI A LA HUANCAINA<br>
+                    CON LOMO SALTADO</h3>
+                <p>Trozos de lomo de res<br> 
+                    bahumados al wok con cebolla,<br>
+                    tomate y nuestro secreto,<br>
+                    acoplados de fettuccini a la<br>
+                    huancaína.  ......................................................S/.22
+                </p>
+
+                <h3>FETTUCCINI A LA HUANCAINA<br>
+                    CON SALTADO DE POLLO</h3>
+                <p>Trozos de pollo ahumados,<br> 
+                    al wok con cebolla, tomate <br> 
+                    y nuestro secreto,<br>
+                    acoplados de fetuccini a la<br>
+                    huancaína.     .......................................................S/.21   
+                </p>
+                
+                <h3>FETTUCCINI A LA<br>
+                    MARINERA</h3>
+                <p>Pasta gruesa bañada con<br> 
+                    deliciosa salsa de la casa,  <br>
+                    choros, langostinos, aros<br>
+                    de calamar y rociado con<br>
+                    queso parmesano.    ...........................................S/.22   
+                </p>
+                
+                <h3>FETTUCCINI SALTADO</h3>
+                <p>Clasico tallarin saltado,<br> 
+                    pero el tallarin es <br>
+                    reemplazado por<br>
+                    fettucini. ............................................................S/.22   
+                </p>
+                
+                
+
+                
+                
+               
+            </div>
+
+            <div class="cajaSopas">
+                <h2 class="tituloSopas">SOPAS</h2>
+                <h3>SUDADO DE FILETE DE<br>
+                    PESCADO</h3>
+                <p>
+                    Filete de pescado armonizados<br>
+                    en una salsa madre de la casa,<br>
+                    tomate, cebolla en gajos,<br>
+                    acompañado de <br>
+                    yucas.  ..........................................................S/.12   
+                </p>
+                <h3>SUDADO VIAGRA DE<br>
+                    CABRILLA ENTERA</h3>
+                <p>
+                    Una cabrilla entera armonizados<br>
+                    en una salsa madre de la casa, <br>
+                    tomate, cebolla en gajos,<br>
+                    un chorro leche de <br>
+                    tigre y acompañado <br>
+                    de yucas.  .......................................................S/.22  
+                </p>
+                <h3>PARIHUELA MIXTA</h3>
+                <p>
+                    Mariscos frescos, trazo<br>
+                    de pescado envueltos <br>
+                    en una salsa madre<br>
+                    marina, coronado con<br>
+                    cangreja y yuca.  ............................................S/.22   
+                </p>
+                
+                <div><img class="pulpo6" src="imgcarta/6.png"></div>
+            </div>
+            <div class="botones">
+                <a href="carta2.html">
+                    <i>←</i> 
+                </a>
+                <a href="carta4.html">
+                    <i>→</i> 
+                </a>
+            </div>    
+        </div                                                                           >
+        
+
+        <p class="fraseCarta1">En “EL TENTACULÓN”, cada cliente es parte de nuestra historia. Te esperamos con los brazos abiertos<br>
+            y el sabor del mar en cada plato.</p>
+
+        
+
+    </body>
+</html>

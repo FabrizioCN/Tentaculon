@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+}
+.calendario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+.mes {
+      opacity: 0.9;
+      width: 260px;
+      background-color: #1f3157;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 16px;
+    }
+
+    .mes h2 {
+      text-align: center;
+      color: #f2f1eb;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .dias-semana,
+    .dias {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .dias-semana div {
+      font-weight: bold;
+      color: #fcfffe;
+      padding: 4px 0;
+    }
+
+    .dias div {
+      padding: 6px 0;
+      margin: 1px 0;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .dias div:hover {
+      background-color: #1f3157;
+      cursor: pointer;
+    }
+
+    .vacio {
+      visibility: hidden;
+    }
+
+body {
+    padding-top: 60px; 
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../imghorarios/fondo4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    max-width: 100vw;
+    color: white;
+}
+
+/* BARRA SUPERIOR */
+.franja-superior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #00163a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+    z-index: 1001;
+    gap: 15px;
+}
+
+.franja-textos {
+    font-size: 18px;
+    white-space: nowrap;
+    text-align: right;
+    max-width: 70vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.franja-textos a {
+  color: inherit;           /* Usa el color del contenedor padre */
+  text-decoration: none;    /* Quita el subrayado */
+}
+
+.franja-textos a:visited {
+  color: inherit;           /* Evita el morado al hacer clic */
+}
+
+.franja-textos a:hover,
+.franja-textos a:focus {
+  color: inherit;           /* O ajusta el color si quieres que cambie al pasar el mouse */
+  text-decoration: none;
+}
+
+.menu-icon {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* SIDEBAR */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    left: auto;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 60px;
+}
+
+.sidebar.activo {
+  left: 0;
+}
+
+.sidebar-item {
+    margin: 15px 20px;
+    padding: 12px;
+    border: 2px solid red;
+    color: white;
+    background-color: black;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar-item:hover {
+    background-color: #111;
+}
+.sidebar-item a {
+  color: inherit;           /* Usa el color del contenedor padre */
+  text-decoration: none;    /* Quita el subrayado */
+}
+
+.sidebar-item a:visited {
+  color: inherit;           /* Evita el morado al hacer clic */
+}
+
+.sidebar-item a:hover,
+.sidebar-item a:focus {
+  color: inherit;           /* O ajusta el color si quieres que cambie al pasar el mouse */
+  text-decoration: none;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .franja-textos {
+        font-size: 14px;
+        max-width: 60vw;
+    }
+
+    .menu-icon {
+        font-size: 24px;
+    }
+}
+
+.rojo{
+    color: red;
+    font-size: 13px;
+}
+.contenedor-horario {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-image: url('fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 50px 70px;
+  gap: 80px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.horario-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+  flex: 1;
+}
+
+.horario-texto h2 {
+  font-size: 52px;
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.horario-texto span {
+  font-size: 60px;
+  font-weight: bold;
+  display: block;
+  color: white;
+}
+
+.horario-tabla {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+  max-width: 450px;
+}
+
+.fila {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 2px solid white;
+  padding: 14px 0;
+  column-gap: 60px;
+}
+
+/* 🌟 Adaptación para celular */
+@media (max-width: 768px) {
+  .contenedor-horario {
+    flex-direction: column;
+    padding: 40px 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .horario-texto {
+    text-align: center;
+    align-items: center;
+  }
+
+  .horario-texto h2,
+  .horario-texto span {
+    font-size: 40px;
+  }
+
+  .horario-tabla {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .fila {
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    gap: 6px;
+  }
+}

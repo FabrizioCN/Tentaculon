@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>CARTA1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/estiloCarta1.css">
+        <link rel="icon" href="imgcarta/logotenta.png">
+    </head>
+    <body>
+        <!-- Barra superior -->
+    <div class="franja-superior">
+        <div class="franja-textos"><a href="../../index.html">Inicio</a> / 
+            <a href="../NOSOTROS/nosotres.html">Nosotros</a> / 
+            <a href="../CARTA/carta1.html">Carta</a> / 
+            <a href="../NUESTRAS SEDES/sedes.html">Sedes</a>
+        </div>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </div>
+
+    <!-- Barra lateral -->
+    <nav class="navbar">
+        NO ME DEJA EJECURA
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-item"><a href="../../index.html">INICIO</a></div>
+            <div class="sidebar-item"><a href="../NOSOTROS/nosotres.html">NOSOTROS</a></div>
+            <div class="sidebar-item"><a href="../CARTA/carta1.html">CARTA</a></div>
+            <div class="sidebar-item"><a href="../../Seguridad/register.html">DELIVERY</a></div>
+            <div class="sidebar-item"><a href="../HORARIO ATENCION/horarios.html">HORARIO DE ATENCIÓN</a></div>
+            <div class="sidebar-item"><a href="../NUESTRAS SEDES/sedes.html">NUESTRAS SEDES</a></div>
+        </div>
+    </nav>
+        <script>
+            const menuIcon = document.getElementById('menu-icon');
+            const navLinks = document.getElementById('nav-links');
+
+            menuIcon.addEventListener('click', () => {
+                navLinks.style.display = (navLinks.style.display === 'flex') ? 'none' : 'flex';
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const menuIcon = document.getElementById("menu-icon");
+                const sidebar = document.getElementById("sidebar");
+                let sidebarOpen = false;
+
+                menuIcon.addEventListener("click", () => {
+                    if (sidebarOpen) {
+                        sidebar.style.width = "0";
+                    } else {
+                        sidebar.style.width = "270px"; // ancho del menú lateral
+                    }
+                    sidebarOpen = !sidebarOpen;
+                });
+            });
+        </script>
+
+        <div class="contenedorCarta1">
+            <img  class="logoCarta" src="imgcarta/logoCarta.png">
+            <img class="pulpo1" src="imgcarta/1.png">
+
+            <div class="cajaAperitivosCombosM">
+                <h2 class="tituloApe">APERITIVOS</h2>
+                <h3>LECHE DE TIGRE CARRETILLERO</h3>
+                <p>Vigoroso concentrado de leche <br> 
+                    de tigre, armonizados de <br> 
+                    chicharrón de potas.  ...................................S/.16
+                </p>
+
+                <h3>LECHE DE TIGRE</h3>
+                <p>Trozos de pescado, perfumado<br> 
+                    con ají, limón y concentrado de <br> 
+                    pescado con una experiencia <br> 
+                    de sabor único.     ...........................................S/.11   
+                </p>
+
+                <h2 class="tituloCombos">COMBOS MARINOS</h2>
+                <h3>COMBO 1</h3>
+                <p>
+                    Ceviche de pescado +<br>
+                    Chicharrón de pota.  ....................................S/.18   
+                </p>
+                <h3>COMBO 2</h3>
+                <p>
+                    Ceviche de pescado +<br>
+                    Chaufa de mariscos.  ...................................S/.20  
+                </p>
+                <h3>COMBO 3</h3>
+                <p>
+                    Ceviche de pescado +<br>
+                    Chicharrón de pota  
+                    Chaufa de mariscos.  ....S/.23   
+                </p>
+                <div class="oferta">
+                    <h3>JUEVES Y VIERNES 3X2</h3>
+                    <p>Paga por 2 y el tercer combo es gratis</p>
+                </div>
+               
+            </div>
+
+            <div class="cajaDuosTriosMarinos">
+                <h2 class="tituloDuos">DÚOS MARINOS</h2>
+                <h3>DUO 1</h3>
+                <p>
+                    Ceviche de pescado +<br>
+                    Chicharrón de pota.  .......................S/.29  
+                </p>
+                <h3>DUO 2</h3>
+                <p>
+                    Ceviche de pescado +<br>
+                    Arroz de mariscos.  .......................S/.29  
+                </p>
+                <h3>DUO 3</h3>
+                <p>
+                    Ceviche de pescado +<br>
+                    Chaufa de mariscos.  .......................S/.29  
+                </p>
+                <h2 class="tituloTrio">TRIOS MARINOS</h2>
+                <h3>TRIO 1</h3>
+                <p>
+                    Ceviche de pescado +<br>
+                    Chicharrón de pescado<br>
+                    Arroz con mariscos  .......................S/.37  
+                </p>
+                <h3>TRIO 2</h3>
+                <p>
+                    Ceviche de pescado +<br>
+                    Chicharrón de pescado<br>
+                    Chaufa de mariscos  .......................S/.37  
+                </p>
+                <div><img class="pulpo2" src="imgcarta/2.png"></div>
+            </div>
+            <div class="botones">
+
+                <a href="carta2.html">
+                    <i>→</i> 
+                </a>
+            </div>    
+        </div                                                                           >
+        
+
+        <p class="fraseCarta1">En “EL TENTACULÓN”, cada cliente es parte de nuestra historia. Te esperamos con los brazos abiertos<br>
+            y el sabor del mar en cada plato.</p>
+
+        
+
+    </body>
+</html>
